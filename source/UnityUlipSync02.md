@@ -94,7 +94,44 @@
 <br>
 
 
-次に見やすいようにカメラ位置を移動します。まず**SampleScene**内の**Main Camera**をクリックして右の**Inspector**から**Position**の**Z**を-1.2に設定。次に同じく**SampleScene**内の**KarinMMD**を選択して右の**Inspector**から**Rotation**の**Y**を-180に設定します。
+### 〜ここでもしテクスチャが自動で貼られないで真っ白だった場合〜
+この解説で使っているtokyo6公式で配布している夏色花梨のMMD3Dモデルは確認したところ大丈夫なのですが、他のMMDモデルだとこの時点で画面上の3Dモデルが表示はされているんだけどテクスチャがなくて白い物体だった場合、手動でテクスチャを貼り付けるちょっと面倒な手順が必要です。
+
+Unityエディタ画面下中央の配置した3Dモデルが入っていたフォルダには**Material**というフォルダが作られていると思うのですが、その中に入ってるマテリアルに手動で一つずつテクスチャを貼るわりと面倒な作業が必要になってきます。
+どのマテリアルにどのテクスチャをつけるのかは[極北Pさんが開発されているPMX Editor](https://kkhk22.seesaa.net/category/14045227-1.html)で**材質タブ**から確認するか**Blender**で確認しながらの一つづつテクスチャを指定していく作業になります。
+
+<br>
+<br>
+<iframe
+src="https://drive.google.com/viewer?srcid=13gJ6j1Kj5zNyxtUGr-NrGmUb9hX8Vjue&usp=drive_fs&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+    style="width:648px; height:397px;"
+    frameborder="0">
+</iframe>
+<br>
+<br>
+<iframe
+src="https://drive.google.com/viewer?srcid=13_ojD4fQn86Dr8xkAntkORZCnGcR24N1&usp=drive_fs&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+    style="width:220px; height:680px;"
+    frameborder="0">
+</iframe>
+
+<br>
+<br>
+
+テクスチャを入れたいマテリアルを選んで該当するテクスチャをアタッチしていく
+
+<iframe
+    src="https://drive.google.com/viewer?srcid=13h0I6Dwea_kavSJSbjZJwYfiJw2UBLNH&usp=drive_fs&pid=explorer&efh=false&a=v&chrome=false&embedded=true"
+    style="width:216px; height:671px;"
+    frameborder="0">
+</iframe>
+<br>
+<br>
+
+このテクスチャの割当はモデルによっても変わるのとシェーダーというどう3Dを表現するかの選択も絡んで大変ややこしいので自動変換されない場合はモデルに合わせて試行錯誤するしかないみたいです。
+
+
+では、無事にテクスチャが貼られたと仮定して次に見やすいようにカメラ位置を移動します。まず**SampleScene**内の**Main Camera**をクリックして右の**Inspector**から**Position**の**Z**を-1.2に設定。次に同じく**SampleScene**内の**KarinMMD**を選択して右の**Inspector**から**Rotation**の**Y**を-180に設定します。
 この-180度の回転はBlenderとUnityでそれぞれ座標系が違うためです。
 
 設定したら画面上部のタブを**Scene**から**Game**に切り替えてください。すると画面中央に夏色花梨3Dモデルが表示されると思います。
@@ -107,6 +144,7 @@
 </iframe>
 <br>
 <br>
+
 
 
 次にインポートしたアニメーションを確認します。場所はどこでもいいのですがとりあえず**KarinMMD**フォルダ内で右クリックをして**Create > Animator Controller**を作成します。名前は適当でいいですがわかりやすく**KarinAnimation**などの名前にしておくと良いと思います。
@@ -136,6 +174,7 @@
 次に**SampleScene**内の**KarinMMD**を選択して右の**Inspector**から**Add Component**で**Animator**を追加します。
 自動的に**MMD 4 Mecanim Model**(**Script**)も追加されます。
 
+<br>
 <br>
 
 <iframe
